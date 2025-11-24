@@ -2,7 +2,9 @@ const Workspace = ({ data }) => {
   const handleDownload = async (id, nombreDocumento) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/documentos/ruoutesDocumentos/DescargarDocumento/${id}`
+        `${
+          import.meta.env.VITE_API
+        }/api/documentos/ruoutesDocumentos/DescargarDocumento/${id}`
       );
 
       if (!response.ok) {

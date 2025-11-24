@@ -69,7 +69,9 @@ function ModalDocumento({ onDocumentoCreado }) {
     data.append("file", formData.Documento);
     try {
       const res = await fetch(
-        "http://localhost:3000/api/documentos/ruoutesDocumentos/GuardarDocumentos",
+        `${
+          import.meta.env.VITE_API
+        }/api/documentos/ruoutesDocumentos/GuardarDocumentos`,
         {
           method: "POST",
           body: data,

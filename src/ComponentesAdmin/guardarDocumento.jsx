@@ -6,7 +6,9 @@ function GuardarDocumento() {
 
   const fetchDocumentos = () => {
     fetch(
-      "http://localhost:3000/api/documentos/ruoutesDocumentos/ListarTodoslosDocumentos"
+      `${
+        import.meta.env.VITE_API
+      }/api/documentos/ruoutesDocumentos/ListarTodoslosDocumentos`
     )
       .then((res) => res.json())
       .then((data) => setDocumentos(data))
@@ -40,7 +42,9 @@ function GuardarDocumento() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/documentos/ruoutesDocumentos/eliminarDocumento/${id}`,
+        `${
+          import.meta.env.VITE_API
+        }/api/documentos/ruoutesDocumentos/eliminarDocumento/${id}`,
         {
           method: "DELETE",
         }
@@ -67,7 +71,9 @@ function GuardarDocumento() {
   const descargarDocumento = async (id, nombreDocumento) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/documentos/ruoutesDocumentos/descargarDocumento/${id}`
+        `${
+          import.meta.env.VITE_API
+        }/api/documentos/ruoutesDocumentos/descargarDocumento/${id}`
       );
 
       if (res.ok) {

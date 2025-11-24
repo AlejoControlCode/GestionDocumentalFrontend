@@ -13,7 +13,7 @@ const LoginModal = ({ show, onClose }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/loggin/auth/login", // Ajusta la ruta según tu backend
+        `${import.meta.env.VITE_API}/api/loggin/auth/login`, // Ajusta la ruta según tu backend
         {
           method: "POST",
           headers: {

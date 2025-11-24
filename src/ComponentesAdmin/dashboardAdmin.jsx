@@ -6,10 +6,13 @@ function DashboardAdmin() {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/loggin/auth/logout", {
-        method: "POST",
-        //credentials: "include",
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API}/api/loggin/auth/logout`,
+        {
+          method: "POST",
+          //credentials: "include",
+        }
+      );
 
       if (res.ok) {
         localStorage.removeItem("usuario");

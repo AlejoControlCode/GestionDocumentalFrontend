@@ -17,7 +17,9 @@ const Root = () => {
       console.log("Buscando:", selectedOption);
 
       const response = await fetch(
-        `http://localhost:3000/api/documentos/ruoutesDocumentos/listarDocumentos/${selectedOption}`
+        `${
+          import.meta.env.VITE_API
+        }/api/documentos/ruoutesDocumentos/listarDocumentos/${selectedOption}`
       );
 
       console.log("Response status:", response.status);
